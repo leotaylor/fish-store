@@ -1,1 +1,3 @@
-console.log('fish');
+const bindEvents = require('./events');
+
+bindEvents();
