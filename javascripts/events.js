@@ -21,6 +21,16 @@ const moveToCart = (e) => {
   const fishCard = $(e.target).closest('.fish');
   // console.log(fishCard);
   $('#snagged').append(fishCard);
+  $(e.target).text('Remove from Cart');
+  $(e.target).on('click', removeFromCart);
+};
+
+// Remove fish from "Basket"
+const removeFromCart = (e) => {
+  const fishCard = $(e.target).closest('.fish'); // finds closest parent of the button that is clicked
+  $('#available').append(fishCard);
+  $(e.target).text('Add to Cart');
+  $(e.target).on('click', moveToCart);
 };
 
 const bindEvents = () => {
